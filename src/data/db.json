@@ -1,3 +1,26 @@
 {
-  "englishlessons": []
+  "englishlessons": [
+    {
+      "id": "1",
+      "title": "diagnosis",
+      "description": "knowledge of English level and areas for improvement",
+      "category": "Comprehension",
+      "day": "2026-05-12",
+      "duration": 1,
+      "current_status": "Done",
+      "coach": "Renaud",
+      "groupLesson": false
+    },
+    {
+      "id": "2",
+      "title": "telling the time",
+      "description": "learn the different ways to read and tell the time",
+      "category": "Comprehension",
+      "day": "2026-05-19",
+      "duration": 1,
+      "current_status": "Done",
+      "coach": "Renaud",
+      "groupLesson": false
+    }
+  ]
 }
