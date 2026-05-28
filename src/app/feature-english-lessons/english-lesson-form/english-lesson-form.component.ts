@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EnglishLessonsService } from '../services/english-lessons.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -16,6 +16,7 @@ import { EnglishLesson } from '../models/english-lesson.model';
 @Component({
   selector: 'app-english-lesson-form',
   imports: [
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatOption,
     MatButtonModule,
@@ -72,9 +73,11 @@ export class EnglishLessonFormComponent implements OnInit{
       } else {
         // Récupération des données typées du formulaire
         const newLesson: EnglishLesson = this.lessonForm.getRawValue();
-
+        // Assigner un ID à la leçon
+        let anId = this.store.lessonCount() + 1;
+        const itemOnLesson = Object.assign({id: anId.toString()}, newLesson);
         // Appel de la méthode du SignalStore (qui gère l'async/await en interne)
-        await this.store.addEnglishLesson(newLesson);
+        await this.store.addEnglishLesson(itemOnLesson);
 
         // Si l'ajout a réussi (pas d'erreur dans le store), on réinitialise le formulaire
         if (!this.store.hasError()) {

@@ -4,7 +4,7 @@
   <button mat-icon-button (click)="closeDialog()"><mat-icon fontIcon="close"></mat-icon></button>
 </div>
 
-<form (ngSubmit)="onSubmit()">
+<form [formGroup]="lessonForm" (ngSubmit)="onSubmit()">
 
   <mat-form-field>
     <mat-label>Title</mat-label>
@@ -41,7 +41,7 @@
     </mat-select>
   </mat-form-field>
   <div class="flex-area">
-    <mat-checkbox formControlName="groupLesson">Hide required marker</mat-checkbox>
+    <mat-checkbox formControlName="groupLesson">Click if group class</mat-checkbox>
     <mat-form-field>
       <mat-label>Description</mat-label>
       <textarea matInput formControlName="description"></textarea>
