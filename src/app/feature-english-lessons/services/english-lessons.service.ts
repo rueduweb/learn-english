@@ -15,4 +15,8 @@ export class EnglishLessonsService {
   getEnglishLessons(): Observable<EnglishLesson[]> {
     return this.http.get<EnglishLesson[]>(`${this.baseURL}`);
   }
+
+  createEnglishLesson(lesson: EnglishLesson): Observable<EnglishLesson> {
+    return this.http.post<EnglishLesson>(this.baseURL, lesson);
+  }
 }

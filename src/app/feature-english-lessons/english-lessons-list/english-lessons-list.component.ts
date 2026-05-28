@@ -12,8 +12,7 @@ import { EnglishLessonsService } from '../services/english-lessons.service';
   selector: 'app-english-lessons-list',
   imports: [MatIconModule, MatTableModule, MatPaginatorModule, MatPaginator, MatFormFieldModule, MatInputModule],
   templateUrl: './english-lessons-list.component.html',
-  styleUrl: './english-lessons-list.component.css',
-  providers: []
+  styleUrl: './english-lessons-list.component.css'
 })
 export class EnglishLessonsListComponent implements OnInit, AfterViewInit {
   store = inject(EnglishLessonsStore);
