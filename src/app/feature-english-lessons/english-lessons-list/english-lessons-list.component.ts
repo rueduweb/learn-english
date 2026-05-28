@@ -4,13 +4,17 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+
 import { EnglishLesson } from '../models/english-lesson.model';
 import { EnglishLessonsStore } from '../store/english-lessons.store';
 import { EnglishLessonsService } from '../services/english-lessons.service';
 
+import { MatDialog } from '@angular/material/dialog';
+import { EnglishLessonFormComponent } from '../english-lesson-form/english-lesson-form.component';
 @Component({
   selector: 'app-english-lessons-list',
-  imports: [MatIconModule, MatTableModule, MatPaginatorModule, MatPaginator, MatFormFieldModule, MatInputModule],
+  imports: [MatIconModule, MatTableModule,MatButtonModule, MatPaginatorModule, MatPaginator, MatFormFieldModule, MatInputModule],
   templateUrl: './english-lessons-list.component.html',
   styleUrl: './english-lessons-list.component.css'
 })
@@ -26,6 +30,9 @@ export class EnglishLessonsListComponent implements OnInit, AfterViewInit {
   lessonsDataArray: EnglishLesson[]=[];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  /* modal dialog */
+  readonly dialog = inject(MatDialog);
 
   constructor() {}
 
@@ -51,6 +58,14 @@ export class EnglishLessonsListComponent implements OnInit, AfterViewInit {
 
   async loadEnglishLessons() {
     await this.store.loadEnglishLessons()
+  }
+
+  openDialog(): void {
+    this.dialog.open(EnglishLessonFormComponent, {
+      height: '480px',
+      width: '640px',
+      data: (this.store.selectedLesson()) ? this.store.selectedLesson() : undefined
+    })
   }
 
 }

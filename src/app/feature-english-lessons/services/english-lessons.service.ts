@@ -19,4 +19,8 @@ export class EnglishLessonsService {
   createEnglishLesson(lesson: EnglishLesson): Observable<EnglishLesson> {
     return this.http.post<EnglishLesson>(this.baseURL, lesson);
   }
+
+  updateEnglishLesson(id: number, lesson: EnglishLesson): Observable<EnglishLesson> {
+    return this.http.put<EnglishLesson>(`${this.baseURL}/${id}`, lesson);
+  }
 }

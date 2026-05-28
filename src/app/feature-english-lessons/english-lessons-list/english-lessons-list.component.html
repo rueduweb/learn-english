@@ -1,5 +1,6 @@
-<div class="title-area">
+<div class="flex-area">
   <h2>English Lessons List</h2>
+  <button mat-raised-button color="warn" (click)="openDialog()">Add Lesson</button>
   @if(nbLessons() > 0){<h3>nb: {{nbLessons()}}</h3>}
 </div>
 <div class="content-area">

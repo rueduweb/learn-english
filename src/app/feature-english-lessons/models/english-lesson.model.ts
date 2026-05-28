@@ -1,4 +1,5 @@
 export type EnglishInfoBase = {
+  id: string | undefined,
   title: string;
   description: string;
   category: string;

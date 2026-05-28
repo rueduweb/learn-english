@@ -1,0 +1,57 @@
+<div class="content-area">
+<div class="flex-area">
+  <h2 mat-dialog-title>{{ data ? 'Update' : 'Add' }} Lesson Form</h2>
+  <button mat-icon-button (click)="closeDialog()"><mat-icon fontIcon="close"></mat-icon></button>
+</div>
+
+<form (ngSubmit)="onSubmit()">
+
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Coach</mat-label>
+    <input matInput formControlName="coach" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Category</mat-label>
+    <mat-select formControlName="category">
+      @for(category of categories; track category) {
+        <mat-option [value]="category">{{ category }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Day</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="day" />
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Duration</mat-label>
+    <input matInput type="number" formControlName="duration" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Current Status</mat-label>
+    <mat-select formControlName="current_status">
+      @for(status of currentStatus; track status){
+        <mat-option [value]="status">{{ status }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  <div class="flex-area">
+    <mat-checkbox formControlName="groupLesson">Hide required marker</mat-checkbox>
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="flex-area">
+  <button mat-raised-button type="button" (click)="closeDialog()">Cancel</button>
+  <button mat-raised-button color="warn" type="submit">Submit</button>
+  </div>
+
+</form>
+</div>

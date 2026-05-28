@@ -3,7 +3,7 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.title-area {
+.flex-area {
   padding: 0 1rem;
   display: flex;
   flex-direction: row;
