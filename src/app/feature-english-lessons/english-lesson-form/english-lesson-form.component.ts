@@ -69,12 +69,12 @@ export class EnglishLessonFormComponent implements OnInit{
     }
     if (this.lessonForm.valid) {
       if (this.data && this.data.id) { // TODO this by updating the store
-        this.englishLessonsService.updateEnglishLesson(parseInt(this.data.id), this.lessonForm.value);
+        this.englishLessonsService.updateEnglishLesson(this.data.id, this.lessonForm.value);
       } else {
         // Récupération des données typées du formulaire
         const newLesson: EnglishLesson = this.lessonForm.getRawValue();
         // Assigner un ID à la leçon
-        let anId = this.store.lessonCount() + 1;
+        let anId = this.store.lessonCount() + 1; // TODO improve
         const itemOnLesson = Object.assign({id: anId.toString()}, newLesson);
         // Appel de la méthode du SignalStore (qui gère l'async/await en interne)
         await this.store.addEnglishLesson(itemOnLesson);
@@ -92,4 +92,5 @@ export class EnglishLessonFormComponent implements OnInit{
   closeDialog(): void {
     this.dialogRef.close();
   }
+
 }

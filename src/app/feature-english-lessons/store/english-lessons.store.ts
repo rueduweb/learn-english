@@ -55,8 +55,35 @@ export const EnglishLessonsStore = signalStore(
           error: "Error adding lesson."
         });
       }
-    }
+    },
 
+    updateEnglishLesson: async (id: string, updatedData: EnglishLesson) => {
+      patchState(store, { isLoading: true });
+      try {
+        // 1.
+        const updatedLesson = await firstValueFrom(englishLessonsService.updateEnglishLesson(id, updatedData));
+
+        // 2.
+        patchState(store, {
+          // Replace the old version of the lesson with the updated version in the table
+          lessons: store.lessons().map(lesson => lesson.id === id ? updatedLesson : lesson),
+          // selectedLesson updated in the store
+          selectedLesson: updatedLesson,
+          isLoading: false,
+          error: null
+        });
+      } catch (err) {
+        patchState(store, {
+          isLoading: false,
+          error: "Error updating lesson."
+        });
+      }
+    },
+
+    // method for select manually a lesson (click on the list)
+    selectLesson: (lesson: EnglishLesson) => {
+      patchState(store, { selectedLesson: lesson });
+    }
 
 
   })),
