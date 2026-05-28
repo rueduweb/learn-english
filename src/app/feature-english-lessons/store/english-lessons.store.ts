@@ -1,10 +1,10 @@
-import { signalStore, withState, withComputed, withMethods, patchState } from '@ngrx/signals';
+import { signalStore, withState, withComputed, withMethods, patchState, withHooks } from '@ngrx/signals';
 import { EnglishLessonsService } from '../services/english-lessons.service';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { computed, inject } from '@angular/core';
 import { tapResponse } from '@ngrx/operators';
 import { EnglishLesson } from '../models/english-lesson.model';
-import { pipe, switchMap, tap } from 'rxjs';
+import { firstValueFrom, pipe, switchMap, tap } from 'rxjs';
 
 type EnglishLessonsState = {
   lessons: EnglishLesson[];
@@ -21,25 +21,24 @@ const initialState: EnglishLessonsState = {
 };
 
 export const EnglishLessonsStore = signalStore(
+  ({ providedIn: 'root'}),
   withState(initialState),
   withComputed(({ lessons, error }) => ({
-    lessonCount: computed(() => lessons.length),
+    lessonCount: computed(() => lessons().length),
     hasError: computed(() => error !== null)
   })),
   withMethods((store, englishLessonsService = inject(EnglishLessonsService)) => ({
-    getEnglishLessons: rxMethod<void>(
-      pipe(
-        tap(() => patchState(store, { isLoading: true })),
-        switchMap(() => {
-          return englishLessonsService.getEnglishLessons().pipe(
-            tapResponse({
-              next: (lessons) => patchState(store, { lessons }),
-              error: (err) => { console.error(err) },
-              finalize: () => patchState(store, { isLoading: false }),
-            })
-          );
-        })
-      )
-    ),
+
+    loadEnglishLessons: async() => {
+      patchState(store, {isLoading: true})
+
+      const lessons = await firstValueFrom(englishLessonsService.getEnglishLessons())
+
+      patchState(store, { lessons, isLoading: false})
+    }
+
+  })),
+  withHooks(store => ({
+
   }))
 );

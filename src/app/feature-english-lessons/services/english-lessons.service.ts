@@ -8,11 +8,11 @@ import { EnglishLesson } from '../models/english-lesson.model';
 })
 export class EnglishLessonsService {
 
-  private readonly baseURL = 'https://localhost:3000/englishlessons';
+  private readonly baseURL = 'http://localhost:3000/englishlessons';
 
   http = inject(HttpClient);
 
   getEnglishLessons(): Observable<EnglishLesson[]> {
-    return this.http.get<EnglishLesson[]>(`${this.baseURL}?_sort=category,title,current_status&_order=desc`);
+    return this.http.get<EnglishLesson[]>(`${this.baseURL}`);
   }
 }
