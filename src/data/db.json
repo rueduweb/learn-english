@@ -1,26 +1,26 @@
 {
   "englishlessons": [
     {
-      "id": "1",
-      "title": "diagnosis",
+      "title": "Diagnosis",
       "description": "knowledge of English level and areas for improvement",
       "category": "Comprehension",
       "day": "2026-05-12",
       "duration": 1,
       "current_status": "Done",
-      "coach": "Renaud",
-      "groupLesson": false
+      "coach": "Robert",
+      "groupLesson": false,
+      "id": "1"
     },
     {
-      "id": "2",
-      "title": "telling the time",
+      "title": "Telling the time",
       "description": "learn the different ways to read and tell the time",
       "category": "Comprehension",
       "day": "2026-05-19",
       "duration": 1,
       "current_status": "Done",
-      "coach": "Renaud",
-      "groupLesson": false
+      "coach": "Robert",
+      "groupLesson": false,
+      "id": "2"
     },
     {
       "id": "BW6UUeUMwOw",
@@ -43,6 +43,17 @@
       "current_status": "Done",
       "coach": "Ashley",
       "groupLesson": true
+    },
+    {
+      "title": "Beginners Club",
+      "description": "useful everyday verbs, clothing vocabulary and speak about what people are wearing",
+      "category": "Vocabulary",
+      "day": "2026-05-11T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "coach": "Emily",
+      "groupLesson": true,
+      "id": "UN8GhuOvRZ0"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
