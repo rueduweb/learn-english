@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -13,3 +12,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .content-area {
   padding: 0 1rem;
 }
+.action {
+  cursor: pointer;
+}
+
+/* color material icons */
+.red-icon {
+  color: rgb(227, 87, 87);
+  font-size: 21px;
+}
+.blue-icon {
+  color: rgb(31, 105, 195);
+  font-size: 21px;
+}
+

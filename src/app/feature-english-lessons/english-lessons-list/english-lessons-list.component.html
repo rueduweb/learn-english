@@ -53,9 +53,13 @@
     </ng-container>
 
     <ng-container matColumnDef="Group Lesson">
-      <th mat-header-cell *matHeaderCellDef> In Group </th>
-      <td mat-cell *matCellDef="let element">
-        {{element.groupLesson === true ? 'yes' :'no'}}
+      <th mat-header-cell *matHeaderCellDef > Group </th>
+      <td mat-cell *matCellDef="let element" style="width:9%">
+        <span class="flex-area">
+          {{element.groupLesson === true ? 'yes' :'no'}}&nbsp;&nbsp;
+          <mat-icon class="blue-icon action"(click)="updateLesson(element)">border_color</mat-icon>
+          <mat-icon class="red-icon" (click)="deleteLesson(element.id)">delete</mat-icon>
+        </span>
       </td>
     </ng-container>
 

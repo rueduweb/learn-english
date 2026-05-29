@@ -12,6 +12,7 @@ import { EnglishLessonsService } from '../services/english-lessons.service';
 
 import { MatDialog } from '@angular/material/dialog';
 import { EnglishLessonFormComponent } from '../english-lesson-form/english-lesson-form.component';
+import { patchState } from '@ngrx/signals';
 @Component({
   selector: 'app-english-lessons-list',
   imports: [MatIconModule, MatTableModule,MatButtonModule, MatPaginatorModule, MatPaginator, MatFormFieldModule, MatInputModule],
@@ -66,6 +67,19 @@ export class EnglishLessonsListComponent implements OnInit, AfterViewInit {
       width: '640px',
       data: (this.store.selectedLesson()) ? this.store.selectedLesson() : undefined
     })
+  }
+
+  updateLesson(lessonSelect: EnglishLesson) {
+    if(lessonSelect) {
+      //1. Update selected lesson in the store
+      this.store.selectLesson(lessonSelect);
+      //2. Open modal to modify the lesson
+      this.openDialog();
+    }
+  }
+
+  deleteLesson(id: string) {
+    // TODO
   }
 
 }
