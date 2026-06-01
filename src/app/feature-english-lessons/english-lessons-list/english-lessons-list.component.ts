@@ -19,7 +19,7 @@ import { ConfirmDeleteLessonComponent } from '../confirm-delete-lesson/confirm-d
   templateUrl: './english-lessons-list.component.html',
   styleUrl: './english-lessons-list.component.css'
 })
-export class EnglishLessonsListComponent implements OnInit, AfterViewInit {
+export class EnglishLessonsListComponent implements OnInit {
   store = inject(EnglishLessonsStore);
   lessonService = inject(EnglishLessonsService);
   nbLessons = this.store.lessonCount;
@@ -42,12 +42,13 @@ export class EnglishLessonsListComponent implements OnInit, AfterViewInit {
     this.loadEnglishLessons().then(() => {
       this.lessonsDataArray = this.store.lessons();
       this.dataSource = new MatTableDataSource<EnglishLesson>(this.lessonsDataArray);
+      this.dataSource.paginator = this.paginator;
     })
   }
 
-  ngAfterViewInit() {
+  /* ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
-  }
+  } */
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

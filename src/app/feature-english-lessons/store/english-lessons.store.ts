@@ -107,6 +107,6 @@ export const EnglishLessonsStore = signalStore(
 
   })),
   withHooks(store => ({
-
+    onInit: async () => { await store.loadEnglishLessons(); }
   }))
 );

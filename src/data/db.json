@@ -45,11 +45,22 @@
       "groupLesson": false
     },
     {
-      "id": "oE7eL0Xcy20",
       "title": "Telling the time",
-      "description": "learn the different ways to read and tell the time",
+      "description": "learn some different ways to read and tell the time",
       "category": "Comprehension",
       "day": "2026-05-18T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "coach": "Robert",
+      "groupLesson": false,
+      "id": "oE7eL0Xcy20"
+    },
+    {
+      "id": "RXD7CRqh9s4",
+      "title": "Typical Day",
+      "description": "listening and speaking about a typical day",
+      "category": "Comprehension",
+      "day": "2026-05-25T22:00:00.000Z",
       "duration": 1,
       "current_status": "Done",
       "coach": "Robert",

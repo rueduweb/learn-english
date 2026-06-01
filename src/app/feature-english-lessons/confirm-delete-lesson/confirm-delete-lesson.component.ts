@@ -21,7 +21,8 @@ export class ConfirmDeleteLessonComponent {
   deleteConfirmed(lesson: EnglishLesson) {
     if(lesson.id) {
       this.store.deleteLesson(lesson.id);
-      this.cancelDialog()
+      this.cancelDialog();
+      this.store.loadEnglishLessons();
     }
   }
 
