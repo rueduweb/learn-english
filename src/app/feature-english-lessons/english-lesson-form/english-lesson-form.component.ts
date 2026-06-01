@@ -9,7 +9,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { Router } from '@angular/router';
 import { EnglishLessonsStore } from '../store/english-lessons.store';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { EnglishLesson } from '../models/english-lesson.model';
@@ -93,7 +92,6 @@ export class EnglishLessonFormComponent implements OnInit{
         }
       }
       this.closeDialog();
-      window.location.reload();
     }
   }
 

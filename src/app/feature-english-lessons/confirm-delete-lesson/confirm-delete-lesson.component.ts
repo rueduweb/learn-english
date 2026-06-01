@@ -21,7 +21,6 @@ export class ConfirmDeleteLessonComponent {
     if(lesson.id) {
       this.store.deleteLesson(lesson.id);
       this.cancelDialog();
-      window.location.reload();
     }
   }
 

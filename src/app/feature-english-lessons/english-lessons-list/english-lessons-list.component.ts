@@ -64,7 +64,8 @@ export class EnglishLessonsListComponent implements OnInit {
     this.dialog.open(EnglishLessonFormComponent, {
       height: '480px',
       width: '640px',
-      data: (this.store.selectedLesson()) ? this.store.selectedLesson() : undefined
+      data: (this.store.selectedLesson()) ? this.store.selectedLesson() : undefined,
+      restoreFocus: false
     })
   }
 
