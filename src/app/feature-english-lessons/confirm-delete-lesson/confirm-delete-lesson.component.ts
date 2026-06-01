@@ -4,11 +4,10 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { EnglishLessonsStore } from '../store/english-lessons.store';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-confirm-delete-lesson',
-  imports: [MatButtonModule, MatIconModule, JsonPipe ],
+  imports: [MatButtonModule, MatIconModule ],
   templateUrl: './confirm-delete-lesson.component.html',
   styleUrl: './confirm-delete-lesson.component.css',
 })
@@ -22,11 +21,12 @@ export class ConfirmDeleteLessonComponent {
     if(lesson.id) {
       this.store.deleteLesson(lesson.id);
       this.cancelDialog();
-      this.store.loadEnglishLessons();
+      window.location.reload();
     }
   }
 
   cancelDialog() {
     this.dialogRef.close();
   }
+
 }

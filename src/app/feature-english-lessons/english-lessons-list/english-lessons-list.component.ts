@@ -1,4 +1,4 @@
-import { inject, AfterViewInit, Component, ViewChild, effect, OnInit, signal } from '@angular/core';
+import { inject, Component, ViewChild, OnInit } from '@angular/core';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -13,6 +13,7 @@ import { EnglishLessonsService } from '../services/english-lessons.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EnglishLessonFormComponent } from '../english-lesson-form/english-lesson-form.component';
 import { ConfirmDeleteLessonComponent } from '../confirm-delete-lesson/confirm-delete-lesson.component';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-english-lessons-list',
   imports: [MatIconModule, MatTableModule,MatButtonModule, MatPaginatorModule, MatPaginator, MatFormFieldModule, MatInputModule],
@@ -45,10 +46,6 @@ export class EnglishLessonsListComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
     })
   }
-
-  /* ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  } */
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
