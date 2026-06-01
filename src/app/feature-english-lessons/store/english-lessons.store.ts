@@ -83,8 +83,27 @@ export const EnglishLessonsStore = signalStore(
     // method for select manually a lesson (click on the list)
     selectLesson: (lesson: EnglishLesson) => {
       patchState(store, { selectedLesson: lesson });
-    }
+    },
 
+    deleteLesson: async (id: string) => {
+      patchState(store, { isLoading: true });
+      try {
+        // 1.
+        await firstValueFrom(englishLessonsService.deleteEnglishLesson(id));
+
+        // 2.
+        patchState(store, {
+          lessons: store.lessons().filter(lesson => lesson.id !== id),
+          isLoading: false,
+          error: null
+        });
+      } catch (err) {
+        patchState(store, {
+          isLoading: false,
+          error: "Error deleting lesson."
+        });
+      }
+    }
 
   })),
   withHooks(store => ({

@@ -23,4 +23,8 @@ export class EnglishLessonsService {
   updateEnglishLesson(id: string, lesson: EnglishLesson): Observable<EnglishLesson> {
     return this.http.put<EnglishLesson>(`${this.baseURL}/${id}`, lesson);
   }
+
+  deleteEnglishLesson(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.baseURL}/${id}`);
+  }
 }

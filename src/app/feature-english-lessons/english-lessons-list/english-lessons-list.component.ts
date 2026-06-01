@@ -12,7 +12,7 @@ import { EnglishLessonsService } from '../services/english-lessons.service';
 
 import { MatDialog } from '@angular/material/dialog';
 import { EnglishLessonFormComponent } from '../english-lesson-form/english-lesson-form.component';
-import { patchState } from '@ngrx/signals';
+import { ConfirmDeleteLessonComponent } from '../confirm-delete-lesson/confirm-delete-lesson.component';
 @Component({
   selector: 'app-english-lessons-list',
   imports: [MatIconModule, MatTableModule,MatButtonModule, MatPaginatorModule, MatPaginator, MatFormFieldModule, MatInputModule],
@@ -32,8 +32,9 @@ export class EnglishLessonsListComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  /* modal dialog */
+  /* modals dialog */
   readonly dialog = inject(MatDialog);
+  readonly confirmDialog = inject(MatDialog);
 
   constructor() {}
 
@@ -65,6 +66,14 @@ export class EnglishLessonsListComponent implements OnInit, AfterViewInit {
     this.dialog.open(EnglishLessonFormComponent, {
       height: '480px',
       width: '640px',
+      data: (this.store.selectedLesson()) ? this.store.selectedLesson() : undefined
+    })
+  }
+
+  openConfirmDialog(): void {
+    this.dialog.open(ConfirmDeleteLessonComponent, {
+      height: '240px',
+      width: '320px',
       data: (this.store.selectedLesson()) ? this.store.selectedLesson() : undefined
     })
   }
