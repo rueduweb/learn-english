@@ -72,8 +72,8 @@ export class EnglishLessonsListComponent implements OnInit, AfterViewInit {
 
   openConfirmDialog(): void {
     this.dialog.open(ConfirmDeleteLessonComponent, {
-      height: '240px',
-      width: '320px',
+      height: '170px',
+      width: '360px',
       data: (this.store.selectedLesson()) ? this.store.selectedLesson() : undefined
     })
   }
@@ -87,8 +87,13 @@ export class EnglishLessonsListComponent implements OnInit, AfterViewInit {
     }
   }
 
-  deleteLesson(id: string) {
-    // TODO
+  deleteLesson(lessonSelect: EnglishLesson) {
+    if(lessonSelect) {
+      //1. delete selected lesson in the store
+      this.store.selectLesson(lessonSelect);
+      //2. Open modal to modify the lesson
+      this.openConfirmDialog();
+    }
   }
 
 }

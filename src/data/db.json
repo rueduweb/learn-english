@@ -1,28 +1,6 @@
 {
   "englishlessons": [
     {
-      "title": "Diagnosis",
-      "description": "knowledge of English level and areas for improvement",
-      "category": "Comprehension",
-      "day": "2026-05-12",
-      "duration": 1,
-      "current_status": "Done",
-      "coach": "Robert",
-      "groupLesson": false,
-      "id": "1"
-    },
-    {
-      "title": "Telling the time",
-      "description": "learn the different ways to read and tell the time",
-      "category": "Comprehension",
-      "day": "2026-05-19",
-      "duration": 1,
-      "current_status": "Done",
-      "coach": "Robert",
-      "groupLesson": false,
-      "id": "2"
-    },
-    {
       "title": "Movie Club",
       "description": "to discuss a film from the 90s by studying its context in relation to a conflict between the people and politics",
       "category": "Comprehension",
@@ -54,6 +32,28 @@
       "coach": "Emily",
       "groupLesson": true,
       "id": "UN8GhuOvRZ0"
+    },
+    {
+      "id": "_sMXFn4j2RE",
+      "title": "Diagnosis",
+      "description": "knowledge of English level and areas for improvement",
+      "category": "Comprehension",
+      "day": "2026-05-11T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "coach": "Robert",
+      "groupLesson": false
+    },
+    {
+      "id": "oE7eL0Xcy20",
+      "title": "Telling the time",
+      "description": "learn the different ways to read and tell the time",
+      "category": "Comprehension",
+      "day": "2026-05-18T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "coach": "Robert",
+      "groupLesson": false
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

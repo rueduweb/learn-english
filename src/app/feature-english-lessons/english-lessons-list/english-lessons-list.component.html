@@ -58,7 +58,7 @@
         <span class="flex-area">
           {{element.groupLesson === true ? 'yes' :'no'}}&nbsp;&nbsp;
           <mat-icon class="blue-icon action"(click)="updateLesson(element)">border_color</mat-icon>
-          <mat-icon class="red-icon" (click)="deleteLesson(element.id)">delete</mat-icon>
+          <mat-icon class="red-icon action" (click)="deleteLesson(element)">delete</mat-icon>
         </span>
       </td>
     </ng-container>

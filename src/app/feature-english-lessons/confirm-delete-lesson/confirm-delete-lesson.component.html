@@ -1,1 +1,19 @@
-<p>confirm-delete-lesson works!</p>
+<div class="content-center">
+  <h3>Delete Lesson {{data.title | json}}</h3>
+
+  <span class="close">
+    <button mat-icon-button (click)="cancelDialog()"><mat-icon fontIcon="close"></mat-icon></button>
+  </span>
+
+  <p style="display: flex; justify-content: center;">
+    <span>
+      All data for this lesson will be permanently deleted.
+      Do you want to continue this action?
+    </span>
+  </p>
+  <div class="flex-area">
+    <button mat-button color="warn" (click)="cancelDialog()">Cancel</button>
+    <button mat-button (click)="deleteConfirmed(data)">Delete</button>
+  </div>
+</div>
+

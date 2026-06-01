@@ -9,9 +9,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   justify-content: space-between;
   align-items: center;
 }
+
 .content-area {
   padding: 0 1rem;
 }
+.content-center {
+  position: relative;
+  display: block;
+  text-align: center;
+  align-items: center;
+}
+.close {
+  position: absolute;
+  top: .5rem;
+  right: .6rem;
+}
+
 .action {
   cursor: pointer;
 }
