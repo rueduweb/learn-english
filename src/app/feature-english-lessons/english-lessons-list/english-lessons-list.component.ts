@@ -13,7 +13,6 @@ import { EnglishLessonsService } from '../services/english-lessons.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EnglishLessonFormComponent } from '../english-lesson-form/english-lesson-form.component';
 import { ConfirmDeleteLessonComponent } from '../confirm-delete-lesson/confirm-delete-lesson.component';
-import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-english-lessons-list',
   imports: [MatIconModule, MatTableModule,MatButtonModule, MatPaginatorModule, MatPaginator, MatFormFieldModule, MatInputModule],
@@ -64,8 +63,7 @@ export class EnglishLessonsListComponent implements OnInit {
     this.dialog.open(EnglishLessonFormComponent, {
       height: '480px',
       width: '640px',
-      data: (this.store.selectedLesson()) ? this.store.selectedLesson() : undefined,
-      restoreFocus: false
+      data: (this.store.selectedLesson()) ? this.store.selectedLesson() : undefined
     })
   }
 

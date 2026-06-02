@@ -56,15 +56,15 @@
       "id": "oE7eL0Xcy20"
     },
     {
-      "id": "00Y5CzmHX0g",
-      "title": "Typical Day",
-      "description": "listening and speaking about a typical day",
+      "title": "Typical Day 2",
+      "description": "listening, speaking about a typical day",
       "category": "Comprehension",
       "day": "2026-05-25T22:00:00.000Z",
       "duration": 1,
       "current_status": "Done",
-      "coach": "Robert",
-      "groupLesson": false
+      "coach": "Routy",
+      "groupLesson": false,
+      "id": "00Y5CzmHX0g"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

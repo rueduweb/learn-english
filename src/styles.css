@@ -38,4 +38,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   color: rgb(31, 105, 195);
   font-size: 21px;
 }
+.blue-notif {
+  color: rgb(84, 175, 211);
+}
 

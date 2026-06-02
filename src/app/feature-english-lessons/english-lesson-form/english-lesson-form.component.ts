@@ -12,8 +12,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { EnglishLessonsStore } from '../store/english-lessons.store';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { EnglishLesson } from '../models/english-lesson.model';
+import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
 import { Guid } from "guid-typescript";
-
+import { NotificationComponent } from '../../shared/notification/notification.component';
 @Component({
   selector: 'app-english-lesson-form',
   imports: [
@@ -25,7 +26,8 @@ import { Guid } from "guid-typescript";
     MatInputModule,
     MatDatepickerModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSnackBarModule
   ],
   templateUrl: './english-lesson-form.component.html',
   styleUrl: './english-lesson-form.component.css',
@@ -43,6 +45,7 @@ export class EnglishLessonFormComponent implements OnInit{
   data = inject<EnglishLesson>(MAT_DIALOG_DATA); // data from lesson selected
 
   private fb = inject(FormBuilder);
+  private notif = inject(MatSnackBar);
 
   constructor(private dialogRef: MatDialogRef<EnglishLessonFormComponent>) {}
 
@@ -78,6 +81,7 @@ export class EnglishLessonFormComponent implements OnInit{
         if (!this.store.hasError()) {
           this.lessonForm.reset();
         }
+        this.openNotification('Lesson updated successfully!', 'Update');
       } else {
 
         const newLesson: EnglishLesson = this.lessonForm.getRawValue();
@@ -90,6 +94,7 @@ export class EnglishLessonFormComponent implements OnInit{
         if (!this.store.hasError()) {
           this.lessonForm.reset();
         }
+        this.openNotification('Lesson created successfully!', 'Create');
       }
       this.closeDialog();
     }
@@ -97,6 +102,13 @@ export class EnglishLessonFormComponent implements OnInit{
 
   closeDialog(): void {
     this.dialogRef.close();
+  }
+
+  openNotification(value: string, action: string) {
+    let datas: string[] = [value, action];
+    this.notif.openFromComponent(NotificationComponent, {
+      data: datas
+    });
   }
 
 }
