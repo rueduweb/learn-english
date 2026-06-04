@@ -101,6 +101,9 @@ export class EnglishLessonFormComponent implements OnInit{
   }
 
   closeDialog(): void {
+    this.dialogRef.afterClosed().subscribe(() => {
+      this.lessonForm.reset();
+    });
     this.dialogRef.close();
   }
 
