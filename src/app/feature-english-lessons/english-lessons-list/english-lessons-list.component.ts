@@ -63,11 +63,19 @@ export class EnglishLessonsListComponent implements OnInit {
     this.dialog.open(EnglishLessonFormComponent, {
       height: '480px',
       width: '640px',
-      data: (this.store.selectedLesson()) ? this.store.selectedLesson() : undefined
+      data: undefined
     })
   }
 
-  openConfirmDialog(): void {
+  openModifyDialog(): void {
+    this.dialog.open(EnglishLessonFormComponent, {
+      height: '480px',
+      width: '640px',
+      data: this.store.selectedLesson()
+    })
+  }
+
+  openConfirmDialog(lessonSelect: EnglishLesson): void {
     this.dialog.open(ConfirmDeleteLessonComponent, {
       height: '170px',
       width: '360px',
@@ -80,17 +88,27 @@ export class EnglishLessonsListComponent implements OnInit {
       //1. Update selected lesson in the store
       this.store.selectLesson(lessonSelect);
       //2. Open modal to modify the lesson
-      this.openDialog();
+      this.openModifyDialog();
     }
   }
 
   deleteLesson(lessonSelect: EnglishLesson) {
     if(lessonSelect) {
-      //1. delete selected lesson in the store
+      //1. Update selected lesson in the store
       this.store.selectLesson(lessonSelect);
-      //2. Open modal to modify the lesson
-      this.openConfirmDialog();
+      //2. Open modal to delete the lesson
+      this.openConfirmDialog(lessonSelect);
     }
   }
+
+  // method for select manually a lesson (click on the list)
+  selectLesson(lesson: EnglishLesson | undefined): EnglishLesson | undefined {
+    if(lesson) {
+      return lesson;
+    } else {
+      return undefined
+    }
+  }
+
 
 }

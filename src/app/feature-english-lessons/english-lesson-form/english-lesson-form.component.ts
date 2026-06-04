@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EnglishLessonsService } from '../services/english-lessons.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -42,7 +42,7 @@ export class EnglishLessonFormComponent implements OnInit{
   categories = ['Vocabulary', 'Grammar', 'Comprehension', 'Pronunciation', 'Assessment', 'Test'];
   currentStatus = ['Todo', 'Done', 'In progress'];
 
-  data = inject<EnglishLesson>(MAT_DIALOG_DATA); // data from lesson selected
+  data = inject<EnglishLesson | null>(MAT_DIALOG_DATA); // data from lesson selected
 
   private fb = inject(FormBuilder);
   private notif = inject(MatSnackBar);
@@ -50,6 +50,7 @@ export class EnglishLessonFormComponent implements OnInit{
   constructor(private dialogRef: MatDialogRef<EnglishLessonFormComponent>) {}
 
   ngOnInit(): void {
+
     this.lessonForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(3)]],
       description: ['', [Validators.required, Validators.maxLength(128)]],
@@ -81,6 +82,7 @@ export class EnglishLessonFormComponent implements OnInit{
         if (!this.store.hasError()) {
           this.lessonForm.reset();
         }
+        this.lessonForm.reset();
         this.openNotification('Lesson updated successfully!', 'Update');
       } else {
 
@@ -101,9 +103,6 @@ export class EnglishLessonFormComponent implements OnInit{
   }
 
   closeDialog(): void {
-    this.dialogRef.afterClosed().subscribe(() => {
-      this.lessonForm.reset();
-    });
     this.dialogRef.close();
   }
 

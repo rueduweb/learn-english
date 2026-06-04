@@ -85,6 +85,10 @@ export const EnglishLessonsStore = signalStore(
       patchState(store, { selectedLesson: lesson });
     },
 
+    unselectLesson: () => {
+      patchState(store, { selectedLesson: undefined });
+    },
+
     deleteLesson: async (id: string) => {
       patchState(store, { isLoading: true });
       try {
