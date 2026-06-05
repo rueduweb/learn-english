@@ -1,6 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: linear-gradient(
+    135deg,
+    #a0d8d8 0%,   /* turquoise doux */
+    #b9e0e8 50%,  /* bleu clair tamisé */
+    #d6f0f5 100%  /* bleu très clair */
+  );
+}
+body::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('../public/assets/images/london_city_big_ben.jpg') center/cover no-repeat;
+  opacity: 0.3;
+  pointer-events: none; /* permet d'éviter d'interférer avec l'interaction */
+  z-index: -1;
+}
 
 .flex-area {
   padding: 0 1rem;
@@ -41,4 +59,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .blue-notif {
   color: rgb(84, 175, 211);
 }
+/* color material table */
+
 
