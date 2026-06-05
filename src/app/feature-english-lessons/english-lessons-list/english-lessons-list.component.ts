@@ -9,13 +9,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { EnglishLesson } from '../models/english-lesson.model';
 import { EnglishLessonsStore } from '../store/english-lessons.store';
 import { EnglishLessonsService } from '../services/english-lessons.service';
-
+import { CustomDateFormatPipe } from '../../pipes/custom-date-format.pipe';
 import { MatDialog } from '@angular/material/dialog';
 import { EnglishLessonFormComponent } from '../english-lesson-form/english-lesson-form.component';
 import { ConfirmDeleteLessonComponent } from '../confirm-delete-lesson/confirm-delete-lesson.component';
 @Component({
   selector: 'app-english-lessons-list',
-  imports: [MatIconModule, MatTableModule,MatButtonModule, MatPaginatorModule, MatPaginator, MatFormFieldModule, MatInputModule],
+  imports: [
+    MatIconModule, MatTableModule,MatButtonModule, MatPaginatorModule,
+    MatPaginator, MatFormFieldModule, MatInputModule, CustomDateFormatPipe
+  ],
   templateUrl: './english-lessons-list.component.html',
   styleUrl: './english-lessons-list.component.css'
 })
@@ -100,15 +103,5 @@ export class EnglishLessonsListComponent implements OnInit {
       this.openConfirmDialog(lessonSelect);
     }
   }
-
-  // method for select manually a lesson (click on the list)
-  selectLesson(lesson: EnglishLesson | undefined): EnglishLesson | undefined {
-    if(lesson) {
-      return lesson;
-    } else {
-      return undefined
-    }
-  }
-
 
 }

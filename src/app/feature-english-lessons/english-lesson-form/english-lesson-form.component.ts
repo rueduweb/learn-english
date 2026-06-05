@@ -82,7 +82,6 @@ export class EnglishLessonFormComponent implements OnInit{
         if (!this.store.hasError()) {
           this.lessonForm.reset();
         }
-        this.lessonForm.reset();
         this.openNotification('Lesson updated successfully!', 'Update');
       } else {
 
