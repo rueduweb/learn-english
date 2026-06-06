@@ -31,13 +31,13 @@ export class EnglishLessonsListComponent implements OnInit {
 
   dataSource = new MatTableDataSource<EnglishLesson>();
 
-  displayedColumns: string[] = ['Id','title', 'description', 'category', 'day', 'duration', 'current_status', 'coach', 'Group Lesson'];
+  displayedColumns: string[] = ['Id','title', 'description', 'category', 'duration', 'current_status', 'coach', 'day', 'Group Lesson'];
 
   lessonsDataArray: EnglishLesson[]=[];
 
-  displayedColumnsFilter: string[] = ['f-id','f-title', 'f-description','f-category', 'f-day', 'f-duration', 'f-current_status', 'f-coach', 'f-groupLesson'];
+  displayedColumnsFilter: string[] = ['f-id','f-title', 'f-description','f-category', 'f-duration', 'f-current_status', 'f-coach', 'f-day', 'f-groupLesson'];
 
-	filterValues = {id: '', title: '', description: '', category:'', day:'', duration:'', current_status:'', coach:'', groupLesson:''}
+	filterValues = {id: '', title: '', description: '', category:'', duration:'', current_status:'', coach:'', day:'', groupLesson:''}
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -52,19 +52,11 @@ export class EnglishLessonsListComponent implements OnInit {
     this.loadEnglishLessons().then(() => {
       this.lessonsDataArray = this.store.lessons();
       this.dataSource = new MatTableDataSource<EnglishLesson>(this.lessonsDataArray);
+      this.dataSource.filterPredicate = this.customFilterPrediction();
       this.dataSource._orderData(this.lessonsDataArray);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     })
-  }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
   }
 
   async loadEnglishLessons() {
@@ -114,13 +106,33 @@ export class EnglishLessonsListComponent implements OnInit {
   }
 
   // Custom manage column filters
-  filterChange(columnName: string, event: any) {
-
+  filterChange(columnName: string, element: any) {
+    if(columnName==='id' || columnName==='title' || columnName==='description' || columnName==='duration' ||
+      columnName==='day' || columnName==='category' || columnName==='current_status' || columnName==='coach' ||
+      columnName==='groupLesson'
+    ){
+			this.filterValues[columnName]= element.target.value.trim().toLowerCase();
+			this.dataSource.filter = JSON.stringify(this.filterValues);
+		}
   }
 
   customFilterPrediction() {
-    const filterPrediction = (data: EnglishLesson, filtervalue: string) => {
+    const filterPrediction = (data: EnglishLesson, filterValue: string): any => {
+      let searchTerm = JSON.parse(filterValue);
+      if(data.id) {
+        return data.id.toString().trim().toLowerCase().indexOf(searchTerm.id.toLowerCase()) !== -1 &&
+        data.title.toString().trim().toLowerCase().indexOf(searchTerm.title.toLowerCase()) !== -1 &&
+        data.description.toString().trim().toLowerCase().indexOf(searchTerm.description.toLowerCase()) !== -1 &&
+        data.category.toString().trim().toLowerCase().indexOf(searchTerm.category.toLowerCase()) !== -1 &&
+        data.day.toString().trim().toLowerCase().indexOf(searchTerm.day.toLowerCase()) !== -1 &&
+        data.duration.toString().trim().toLowerCase().indexOf(searchTerm.duration.toLowerCase()) !== -1 &&
+        data.current_status.toString().trim().toLowerCase().indexOf(searchTerm.current_status.toLowerCase()) !== -1 &&
+        data.coach.toString().trim().toLowerCase().indexOf(searchTerm.coach.toLowerCase()) !== -1 &&
+        data.groupLesson.toString().trim().toLowerCase().indexOf(searchTerm.groupLesson.toLowerCase()) !== -1
+      }
+
     }
+    return filterPrediction;
   }
 
 }

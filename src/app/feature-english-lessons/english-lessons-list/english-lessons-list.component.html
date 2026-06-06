@@ -5,11 +5,6 @@
 </div>
 <div class="content-area">
 
-  <mat-form-field>
-    <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="search" #input>
-  </mat-form-field>
-
   <table
     mat-table
     matSort
@@ -109,7 +104,12 @@
     </ng-container>
     <ng-container matColumnDef="f-groupLesson">
       <th mat-header-cell *matHeaderCellDef>
-        <input class="field-filter" id="groupLesson" type="text" (keyup)="filterChange('groupLesson',$event)"/>
+        <select class="field-filter" id="groupLesson" type="text" placeholder="false or true"
+        (change)="filterChange('groupLesson',$event)">
+          <option selected></option>
+          <option value="true">yes</option>
+          <option value="false">no</option>
+        </select>
       </th>
     </ng-container>
 
