@@ -35,6 +35,10 @@ export class EnglishLessonsListComponent implements OnInit {
 
   lessonsDataArray: EnglishLesson[]=[];
 
+  displayedColumnsFilter: string[] = ['f-id','f-title', 'f-description','f-category', 'f-day', 'f-duration', 'f-current_status', 'f-coach', 'f-groupLesson'];
+
+	filterValues = {id: '', title: '', description: '', category:'', day:'', duration:'', current_status:'', coach:'', groupLesson:''}
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -106,6 +110,16 @@ export class EnglishLessonsListComponent implements OnInit {
       this.store.selectLesson(lessonSelect);
       //2. Open modal to delete the lesson
       this.openConfirmDialog(lessonSelect);
+    }
+  }
+
+  // Custom manage column filters
+  filterChange(columnName: string, event: any) {
+
+  }
+
+  customFilterPrediction() {
+    const filterPrediction = (data: EnglishLesson, filtervalue: string) => {
     }
   }
 

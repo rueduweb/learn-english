@@ -2,8 +2,18 @@ table {
   width: 100%;
   margin-top: 1rem;
 }
-
+.mat-mdc-header-cell {
+  text-overflow: inherit;
+}
 mat-form-field {
   width: 33%;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+input.field-filter {
+  width: 100%;
+  height: 28px;
+  border-radius: .2rem;
+  outline: 0;
+  border: 1px solid rgb(165, 165, 166);
 }
