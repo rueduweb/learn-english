@@ -11,7 +11,7 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { EnglishLessonsStore } from '../store/english-lessons.store';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { EnglishLesson } from '../models/english-lesson.model';
+import { EnglishLesson } from '../../shared/models/english-item.model';
 import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
 import { Guid } from "guid-typescript";
 import { NotificationComponent } from '../../shared/notification/notification.component';

@@ -1,7 +1,7 @@
 import { signalStore, withState, withComputed, withMethods, patchState, withHooks } from '@ngrx/signals';
 import { EnglishLessonsService } from '../services/english-lessons.service';
 import { computed, inject } from '@angular/core';
-import { EnglishLesson } from '../models/english-lesson.model';
+import { EnglishLesson } from '../../shared/models/english-item.model';
 import { firstValueFrom } from 'rxjs';
 
 type EnglishLessonsState = {

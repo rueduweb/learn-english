@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { EnglishLesson } from '../models/english-lesson.model';
+import { EnglishLesson } from '../../shared/models/english-item.model';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';

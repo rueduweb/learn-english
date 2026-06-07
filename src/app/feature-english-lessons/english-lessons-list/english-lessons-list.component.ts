@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 
-import { EnglishLesson } from '../models/english-lesson.model';
+import { EnglishLesson } from '../../shared/models/english-item.model';
 import { EnglishLessonsStore } from '../store/english-lessons.store';
 import { EnglishLessonsService } from '../services/english-lessons.service';
 import { CustomDateFormatPipe } from '../../pipes/custom-date-format.pipe';
