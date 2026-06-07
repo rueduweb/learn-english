@@ -17,3 +17,9 @@ input.field-filter {
   outline: 0;
   border: 1px solid rgb(165, 165, 166);
 }
+.field-filter-select {
+  height: 31px;
+  border-radius: .2rem;
+  outline: 0;
+  border: 1px solid rgb(165, 165, 166);
+}
