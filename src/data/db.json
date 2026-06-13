@@ -76,7 +76,41 @@
       "current_status": "Done",
       "coach": "Robert",
       "groupLesson": false
+    },
+    {
+      "id": "Zp72rOa55oQ",
+      "title": "About frequency",
+      "description": "Discuss about frequency, speaking and listening",
+      "category": "Comprehension",
+      "day": "2026-06-08T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "coach": "Robert",
+      "groupLesson": false
+    },
+    {
+      "title": "Sport and Games Club",
+      "description": "Discover darts game around a video which explain the rules and its history",
+      "category": "Comprehension",
+      "day": "2026-06-09T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "coach": "Phil",
+      "groupLesson": true,
+      "id": "Jr1FfvETpMk"
+    },
+    {
+      "id": "m2b3JiB8Sac",
+      "title": "Apero Zoom 2",
+      "description": "Vocabulary and discussion about hotel stays",
+      "category": "Comprehension",
+      "day": "2026-06-08T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "coach": "Natsie",
+      "groupLesson": true
     }
   ],
-  "englishexercices": []
+  "englishexercices": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }
