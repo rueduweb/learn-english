@@ -13,7 +13,7 @@ export type EnglishLesson = EnglishInfoBase & {
   groupLesson: boolean;
 };
 
-export type EnglishExercice = EnglishInfoBase & {
+export type EnglishExercise = EnglishInfoBase & {
   score: string;
   comment: string | undefined;
 };
