@@ -27,6 +27,25 @@ body::before{
   justify-content: space-between;
   align-items: center;
 }
+.flex-no-pad {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-left-pad {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: initial;
+}
+.flex-initial {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: initial;
+}
 
 .content-area {
   padding: 0 1rem;

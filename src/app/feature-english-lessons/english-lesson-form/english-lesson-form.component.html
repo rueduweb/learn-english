@@ -5,42 +5,48 @@
 </div>
 
 <form [formGroup]="lessonForm" (ngSubmit)="onSubmit()">
+  <div class="flex-no-pad">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Coach</mat-label>
+      <input matInput formControlName="coach" />
+    </mat-form-field>
+  </div>
+  <div class="flex-no-pad">
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <mat-select formControlName="category">
+        @for(category of categories; track category) {
+          <mat-option [value]="category">{{ category }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Day</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="day" />
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="flex-no-pad">
+    <mat-form-field>
+      <mat-label>Duration</mat-label>
+      <input matInput type="number" formControlName="duration" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Current Status</mat-label>
+      <mat-select formControlName="current_status">
+        @for(status of currentStatus; track status){
+          <mat-option [value]="status">{{ status }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
 
-  <mat-form-field>
-    <mat-label>Title</mat-label>
-    <input matInput formControlName="title" />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Coach</mat-label>
-    <input matInput formControlName="coach" />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Category</mat-label>
-    <mat-select formControlName="category">
-      @for(category of categories; track category) {
-        <mat-option [value]="category">{{ category }}</mat-option>
-      }
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Day</mat-label>
-    <input matInput [matDatepicker]="picker" formControlName="day" />
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Duration</mat-label>
-    <input matInput type="number" formControlName="duration" />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Current Status</mat-label>
-    <mat-select formControlName="current_status">
-      @for(status of currentStatus; track status){
-        <mat-option [value]="status">{{ status }}</mat-option>
-      }
-    </mat-select>
-  </mat-form-field>
-  <div class="flex-area">
+  <div class="flex-left-pad">
     <mat-checkbox formControlName="groupLesson">Click if group class</mat-checkbox>
     <mat-form-field>
       <mat-label>Description</mat-label>

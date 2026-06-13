@@ -50,7 +50,7 @@ export class EnglishExercisesListComponent implements OnInit{
   openDialog(): void {
     this.dialog.open(EnglishExerciseFormComponent, {
       height: '480px',
-      width: '720px',
+      width: '620px',
       data: undefined
     })
   }
