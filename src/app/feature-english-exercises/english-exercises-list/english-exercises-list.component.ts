@@ -70,7 +70,7 @@ export class EnglishExercisesListComponent implements OnInit{
   // Custom manage column filters
   filterChange(columnName: string, element: any) {
     if(columnName==='id' || columnName==='title' || columnName==='description' || columnName==='duration' ||
-      columnName==='day' || columnName==='category' || columnName==='current_status' || columnName==='score' ||
+      columnName==='category' || columnName==='current_status' || columnName==='score' || columnName==='day' ||
       columnName==='comment'
     ){
 			this.filterValues[columnName]= element.target.value.trim().toLowerCase();
