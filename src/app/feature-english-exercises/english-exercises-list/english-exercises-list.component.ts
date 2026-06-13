@@ -1,6 +1,6 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
@@ -34,6 +34,8 @@ export class EnglishExercisesListComponent implements OnInit{
 
   exercisesDataArray: EnglishExercise[] = [];
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   /* modals dialog */
   readonly dialog = inject(MatDialog);
 
@@ -41,6 +43,7 @@ export class EnglishExercisesListComponent implements OnInit{
     this.loadEnglishExercises().then(() => {
       this.exercisesDataArray = this.store.Exercises();
       this.dataSource = new MatTableDataSource<EnglishExercise>(this.exercisesDataArray);
+      this.dataSource.paginator = this.paginator;
     })
   }
 
