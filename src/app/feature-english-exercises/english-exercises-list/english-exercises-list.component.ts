@@ -10,7 +10,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { EnglishExercise } from '../../shared/models/english-item.model';
 import { EnglishExercisesStore } from '../store/english-exercises.store';
 import { EnglishExercisesService } from '../services/english-exercises.service';
-
+import { MatDialog } from '@angular/material/dialog';
+import { EnglishExerciseFormComponent } from '../english-exercise-form/english-exercise-form.component';
 @Component({
   selector: 'app-english-exercises-list',
   imports: [
@@ -32,6 +33,9 @@ export class EnglishExercisesListComponent implements OnInit{
 
   exercisesDataArray: EnglishExercise[] = [];
 
+  /* modals dialog */
+  readonly dialog = inject(MatDialog);
+
   ngOnInit() {
     this.loadEnglishExercises().then(() => {
       this.exercisesDataArray = this.store.Exercises();
@@ -41,5 +45,13 @@ export class EnglishExercisesListComponent implements OnInit{
 
   async loadEnglishExercises() {
     await this.store.loadExercises()
+  }
+
+  openDialog(): void {
+    this.dialog.open(EnglishExerciseFormComponent, {
+      height: '480px',
+      width: '720px',
+      data: undefined
+    })
   }
 }
