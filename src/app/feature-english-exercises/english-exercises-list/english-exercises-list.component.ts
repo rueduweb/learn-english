@@ -81,7 +81,7 @@ export class EnglishExercisesListComponent implements OnInit{
   customFilterPrediction() {
       const filterPrediction = (data: EnglishExercise, filterValue: string): any => {
         let searchTerm = JSON.parse(filterValue);
-        if(data.id && data.score && data.comment) {
+        if(data.id) {
           return data.id.toString().trim().toLowerCase().indexOf(searchTerm.id.toLowerCase()) !== -1 &&
           data.title.toString().trim().toLowerCase().indexOf(searchTerm.title.toLowerCase()) !== -1 &&
           data.description.toString().trim().toLowerCase().indexOf(searchTerm.description.toLowerCase()) !== -1 &&
