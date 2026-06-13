@@ -37,7 +37,7 @@ export class EnglishLessonsListComponent implements OnInit {
 
   displayedColumnsFilter: string[] = ['f-id','f-title', 'f-description','f-category', 'f-duration', 'f-current_status', 'f-coach', 'f-day', 'f-groupLesson'];
 
-	filterValues = {id: '', title: '', description: '', category:'', duration:'', current_status:'', coach:'', day:'', groupLesson:''}
+	filterValues = {id: '', title: '', description: '', category:'', duration:'', current_status:'', coach:'', day:'', groupLesson:''};
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;

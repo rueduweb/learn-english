@@ -6,56 +6,103 @@
 <div class="content-area">
   <table
     mat-table
+    matSort
     [dataSource]="dataSource"
     class="mat-elevation-z8 demo-table"
   >
     <ng-container matColumnDef="Id">
-      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> Id </th>
       <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="f-id">
+      <th mat-header-cell *matHeaderCellDef>
+        <input class="field-filter" id="id" type="text" (keyup)="filterChange('id',$event)"/>
+      </th>
     </ng-container>
 
     <ng-container matColumnDef="title">
-      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> Title </th>
       <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+    <ng-container matColumnDef="f-title">
+      <th mat-header-cell *matHeaderCellDef>
+        <input class="field-filter" id="title" type="text" (keyup)="filterChange('title',$event)"/>
+      </th>
     </ng-container>
 
     <ng-container matColumnDef="description">
-      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> Description </th>
       <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+    <ng-container matColumnDef="f-description">
+      <th mat-header-cell *matHeaderCellDef>
+        <input class="field-filter" id="description" type="text" (keyup)="filterChange('description',$event)"/>
+      </th>
     </ng-container>
 
     <ng-container matColumnDef="category">
-      <th mat-header-cell *matHeaderCellDef> Category </th>
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> Category </th>
       <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+    </ng-container>
+    <ng-container matColumnDef="f-category">
+      <th mat-header-cell *matHeaderCellDef>
+        <input class="field-filter" id="category" type="text" (keyup)="filterChange('category',$event)"/>
+      </th>
     </ng-container>
 
     <ng-container matColumnDef="duration">
-      <th mat-header-cell *matHeaderCellDef> Duration </th>
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> Duration </th>
       <td mat-cell *matCellDef="let element"> {{element.duration}} </td>
+    </ng-container>
+    <ng-container matColumnDef="f-duration">
+      <th mat-header-cell *matHeaderCellDef>
+        <input class="field-filter" id="duration" type="number" (keyup)="filterChange('duration',$event)"/>
+      </th>
     </ng-container>
 
     <ng-container matColumnDef="current_status">
-      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> Status </th>
       <td mat-cell *matCellDef="let element"> {{element.current_status}} </td>
+    </ng-container>
+    <ng-container matColumnDef="f-current_status">
+      <th mat-header-cell *matHeaderCellDef>
+        <input class="field-filter" id="current_status" type="text" (keyup)="filterChange('current_status',$event)"/>
+      </th>
     </ng-container>
 
     <ng-container matColumnDef="score">
-      <th mat-header-cell *matHeaderCellDef> Score </th>
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> Score </th>
       <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+    </ng-container>
+    <ng-container matColumnDef="f-score">
+      <th mat-header-cell *matHeaderCellDef>
+        <input class="field-filter" id="score" type="text" (keyup)="filterChange('score',$event)"/>
+      </th>
     </ng-container>
 
     <ng-container matColumnDef="day">
-      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> Date </th>
       <td mat-cell *matCellDef="let element" style="width:9%"> {{element.day | customDateFormat}} </td>
+    </ng-container>
+    <ng-container matColumnDef="f-day">
+      <th mat-header-cell *matHeaderCellDef>
+        <input class="field-filter" id="day" type="text" (keyup)="filterChange('day',$event)"/>
+      </th>
     </ng-container>
 
     <ng-container matColumnDef="comment">
-      <th mat-header-cell *matHeaderCellDef> Comment </th>
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> Comment </th>
       <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
+    </ng-container>
+    <ng-container matColumnDef="f-comment">
+      <th mat-header-cell *matHeaderCellDef>
+        <input class="field-filter" id="comment" type="text" (keyup)="filterChange('comment',$event)"/>
+      </th>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsFilter"></tr>
   </table>
   <mat-paginator #paginator
                 class="demo-paginator"
