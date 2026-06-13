@@ -74,8 +74,16 @@ export class EnglishExerciseFormComponent implements OnInit{
 
         let anId = Guid.create();
         const itemOnExercise = Object.assign({id: anId.toString()}, newExercise);
-        // TODO call create store method
+
+        console.log('item to create: ', itemOnExercise);
+        // Calling the SignalStore method to add the exercise
+        await this.store.create(itemOnExercise);
+
+        if(!this.store.error()) {
+          this.exerciseForm.reset();
+        }
       }
+      this.closeDialog();
     }
   }
 

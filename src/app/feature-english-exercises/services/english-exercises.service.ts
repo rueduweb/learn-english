@@ -7,7 +7,7 @@ import { EnglishExercise } from '../../shared/models/english-item.model';
   providedIn: 'root',
 })
 export class EnglishExercisesService {
-  private readonly baseURL = 'http://localhost:3000/englishExercises';
+  private readonly baseURL = 'http://localhost:3000/englishexercises';
 
   http = inject(HttpClient);
 

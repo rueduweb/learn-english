@@ -14,6 +14,6 @@ export type EnglishLesson = EnglishInfoBase & {
 };
 
 export type EnglishExercise = EnglishInfoBase & {
-  score: string;
+  score: string | undefined;
   comment: string | undefined;
 };

@@ -44,6 +44,11 @@
       <td mat-cell *matCellDef="let element"> {{element.score}} </td>
     </ng-container>
 
+    <ng-container matColumnDef="day">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let element" style="width:9%"> {{element.day | customDateFormat}} </td>
+    </ng-container>
+
     <ng-container matColumnDef="comment">
       <th mat-header-cell *matHeaderCellDef> Comment </th>
       <td mat-cell *matCellDef="let element"> {{element.comment}} </td>

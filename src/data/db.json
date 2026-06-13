@@ -111,6 +111,106 @@
       "groupLesson": true
     }
   ],
-  "englishexercices": [],
+  "englishexercises": [
+    {
+      "id": "nodoX4SvIpI",
+      "title": "Listen podcast 1",
+      "description": "Listen a podcast ans answer at an associated quizz",
+      "category": "Comprehension",
+      "day": "2026-05-11T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "",
+      "comment": ""
+    },
+    {
+      "id": "tIGUxpLRldE",
+      "title": "Activity Council 1",
+      "description": "An activity british and council to improve oral comprehension",
+      "category": "Comprehension",
+      "day": "2026-05-11T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "",
+      "comment": ""
+    },
+    {
+      "id": "JC95PK_ztTo",
+      "title": "Activity Council 2",
+      "description": "An activity british and council to improve reading comprenhension",
+      "category": "Comprehension",
+      "day": "2026-05-11T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "",
+      "comment": ""
+    },
+    {
+      "id": "zsSZ_Odkip8",
+      "title": "Activity Council 3",
+      "description": "level A1-A2, activity british and council to improve vocabulary",
+      "category": "Vocabulary",
+      "day": "2026-05-18T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "100 percent",
+      "comment": ""
+    },
+    {
+      "id": "z2iCCbAiycs",
+      "title": "Activity Cambridge 1",
+      "description": "British activity to work the pronunciation ",
+      "category": "Pronunciation",
+      "day": "2026-05-18T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "100 percent",
+      "comment": ""
+    },
+    {
+      "id": "4B-2kE1pukk",
+      "title": "Activity Council 4",
+      "description": "Level A2, An activity british and council to improve reading comprehension",
+      "category": "Comprehension",
+      "day": "2026-05-18T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "83% and 100%",
+      "comment": ""
+    },
+    {
+      "id": "62EHSzuCTs0",
+      "title": "Activity Council 5",
+      "description": "Level A2, activity british and council to improve oral comprehension",
+      "category": "Comprehension",
+      "day": "2026-05-18T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "100% and 100%",
+      "comment": ""
+    },
+    {
+      "id": "2on8bVv5gT8",
+      "title": "Listen podcast 2",
+      "description": "Listen a podcast and answer at an associated quizz",
+      "category": "Comprehension",
+      "day": "2026-05-18T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "60% and 100%",
+      "comment": ""
+    },
+    {
+      "id": "OZUf_vgLyzE",
+      "title": "Listen podcast 3",
+      "description": "Listen to a podcast and write a summary about it",
+      "category": "Comprehension",
+      "day": "2026-05-25T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "",
+      "comment": " written summary"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

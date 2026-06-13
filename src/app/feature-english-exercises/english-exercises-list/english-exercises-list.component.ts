@@ -12,12 +12,13 @@ import { EnglishExercisesStore } from '../store/english-exercises.store';
 import { EnglishExercisesService } from '../services/english-exercises.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EnglishExerciseFormComponent } from '../english-exercise-form/english-exercise-form.component';
+import { CustomDateFormatPipe } from "../../pipes/custom-date-format.pipe";
 @Component({
   selector: 'app-english-exercises-list',
   imports: [
-    MatIconModule, MatTableModule,MatButtonModule, MatPaginatorModule,
+    MatIconModule, MatTableModule, MatButtonModule, MatPaginatorModule,
     MatFormFieldModule, MatInputModule, MatSortModule,
-
+    CustomDateFormatPipe
   ],
   templateUrl: './english-exercises-list.component.html',
   styleUrl: './english-exercises-list.component.css',
@@ -29,7 +30,7 @@ export class EnglishExercisesListComponent implements OnInit{
 
   dataSource = new MatTableDataSource<EnglishExercise>();
 
-  displayedColumns: string[] = ['Id','title', 'description', 'category', 'duration', 'current_status', 'score', 'comment'];
+  displayedColumns: string[] = ['Id','title', 'description', 'category', 'duration', 'current_status', 'score', 'day', 'comment'];
 
   exercisesDataArray: EnglishExercise[] = [];
 
