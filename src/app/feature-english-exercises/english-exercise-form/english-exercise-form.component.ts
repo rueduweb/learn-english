@@ -68,7 +68,12 @@ export class EnglishExerciseFormComponent implements OnInit{
     if (this.exerciseForm.valid) {
       if (this.data && this.data.id) {
         const updatedExercise: EnglishExercise = this.exerciseForm.getRawValue();
-        // TODO call update store method
+        // Calling the SignalStore method to update the exercise
+        await this.store.update(this.data.id, updatedExercise);
+        // If the update was successful (no errors in the store), the form is reset.
+        if (!this.store.error()) {
+          this.exerciseForm.reset();
+        }
       } else {
         const newExercise: EnglishExercise = this.exerciseForm.getRawValue();
 

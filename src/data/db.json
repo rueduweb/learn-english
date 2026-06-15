@@ -146,26 +146,26 @@
       "comment": ""
     },
     {
-      "id": "zsSZ_Odkip8",
       "title": "Activity Council 3",
-      "description": "level A1-A2, activity british and council to improve vocabulary",
+      "description": "Level A1-A2, activity british and council to improve vocabulary",
       "category": "Vocabulary",
       "day": "2026-05-18T22:00:00.000Z",
       "duration": 1,
       "current_status": "Done",
-      "score": "100 percent",
-      "comment": ""
+      "score": "100%",
+      "comment": "",
+      "id": "zsSZ_Odkip8"
     },
     {
-      "id": "z2iCCbAiycs",
       "title": "Activity Cambridge 1",
       "description": "British activity to work the pronunciation ",
       "category": "Pronunciation",
       "day": "2026-05-18T22:00:00.000Z",
       "duration": 1,
       "current_status": "Done",
-      "score": "100 percent",
-      "comment": ""
+      "score": "100%",
+      "comment": "",
+      "id": "z2iCCbAiycs"
     },
     {
       "id": "4B-2kE1pukk",

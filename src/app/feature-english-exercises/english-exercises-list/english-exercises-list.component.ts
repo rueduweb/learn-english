@@ -13,6 +13,7 @@ import { EnglishExercisesService } from '../services/english-exercises.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EnglishExerciseFormComponent } from '../english-exercise-form/english-exercise-form.component';
 import { CustomDateFormatPipe } from "../../pipes/custom-date-format.pipe";
+import { ConfirmDeleteExerciseComponent } from '../confirm-delete-exercise/confirm-delete-exercise.component';
 @Component({
   selector: 'app-english-exercises-list',
   imports: [
@@ -30,7 +31,7 @@ export class EnglishExercisesListComponent implements OnInit{
 
   dataSource = new MatTableDataSource<EnglishExercise>();
 
-  displayedColumns: string[] = ['Id', 'title', 'description', 'category', 'duration', 'current_status', 'score', 'day', 'comment'];
+  displayedColumns: string[] = ['Id', 'title', 'description', 'category', 'duration', 'current_status', 'score', 'day', 'comment', 'action'];
 
   exercisesDataArray: EnglishExercise[] = [];
 
@@ -65,6 +66,40 @@ export class EnglishExercisesListComponent implements OnInit{
       width: '640px',
       data: undefined
     })
+  }
+
+  openModifyDialog(): void {
+    this.dialog.open(EnglishExerciseFormComponent, {
+      height: '480px',
+      width: '640px',
+      data: this.store.selectedExercise()
+    })
+  }
+
+  openConfirmDialog(exerciseSelect: EnglishExercise): void {
+    this.dialog.open(ConfirmDeleteExerciseComponent , {
+      height: '170px',
+      width: '360px',
+      data: (this.store.selectedExercise())? this.store.selectedExercise() : undefined
+    })
+  }
+
+  updateExercise(exerciseSelect: EnglishExercise) {
+    if(exerciseSelect) {
+      //1. Update selected exercise in the store
+      this.store.selectExercise(exerciseSelect);
+      //2. Open modal to modify the exercise
+      this.openModifyDialog();
+    }
+  }
+
+  deleteExercise(exerciseSelect: EnglishExercise) {
+    if(exerciseSelect) {
+      //1. Update selected exercise in the store
+      this.store.selectExercise(exerciseSelect);
+      //2. Open modal to delete the exercise
+      this.openConfirmDialog(exerciseSelect);
+    }
   }
 
   // Custom manage column filters
