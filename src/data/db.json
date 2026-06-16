@@ -212,5 +212,14 @@
       "comment": " written summary"
     }
   ],
+  "users": [
+    {
+      "id": "YuJHPezNb2B",
+      "username": "Jongu",
+      "email": "johndoe@mail.com",
+      "password": "test123456",
+      "role": "admin"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
