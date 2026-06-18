@@ -109,6 +109,17 @@
       "current_status": "Done",
       "coach": "Natsie",
       "groupLesson": true
+    },
+    {
+      "id": "pM9pGSVK97k",
+      "title": "Past simple",
+      "description": "Past simple with regular verbs and pronunciation",
+      "category": "Comprehension",
+      "day": "2026-06-15T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "coach": "Robert",
+      "groupLesson": false
     }
   ],
   "englishexercises": [
@@ -168,37 +179,37 @@
       "id": "z2iCCbAiycs"
     },
     {
-      "id": "4B-2kE1pukk",
       "title": "Activity Council 4",
       "description": "Level A2, An activity british and council to improve reading comprehension",
       "category": "Comprehension",
       "day": "2026-05-18T22:00:00.000Z",
       "duration": 1,
       "current_status": "Done",
-      "score": "83% and 100%",
-      "comment": ""
+      "score": "91,5%",
+      "comment": "",
+      "id": "4B-2kE1pukk"
     },
     {
-      "id": "62EHSzuCTs0",
       "title": "Activity Council 5",
       "description": "Level A2, activity british and council to improve oral comprehension",
       "category": "Comprehension",
       "day": "2026-05-18T22:00:00.000Z",
       "duration": 1,
       "current_status": "Done",
-      "score": "100% and 100%",
-      "comment": ""
+      "score": "100%",
+      "comment": "",
+      "id": "62EHSzuCTs0"
     },
     {
-      "id": "2on8bVv5gT8",
       "title": "Listen podcast 2",
       "description": "Listen a podcast and answer at an associated quizz",
       "category": "Comprehension",
       "day": "2026-05-18T22:00:00.000Z",
       "duration": 1,
       "current_status": "Done",
-      "score": "60% and 100%",
-      "comment": ""
+      "score": "80%",
+      "comment": "",
+      "id": "2on8bVv5gT8"
     },
     {
       "id": "OZUf_vgLyzE",
@@ -210,6 +221,226 @@
       "current_status": "Done",
       "score": "",
       "comment": " written summary"
+    },
+    {
+      "id": "mW6_UccBFIs",
+      "title": "Activity Council 6",
+      "description": "Level A2, an activity british council to improve written comprehnesion",
+      "category": "Comprehension",
+      "day": "2026-05-25T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "91,5%",
+      "comment": ""
+    },
+    {
+      "id": "kY-QbxuJIrQ",
+      "title": "Listen podcasts ",
+      "description": "A2 Listen two podcasts and answer some associated quizz",
+      "category": "Comprehension",
+      "day": "2026-05-25T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "80%",
+      "comment": ""
+    },
+    {
+      "id": "iRe86kzOB40",
+      "title": "Activity Council 7",
+      "description": "Theme: Accessories",
+      "category": "Vocabulary",
+      "day": "2026-05-25T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "",
+      "comment": ""
+    },
+    {
+      "id": "IKdx1O6j93w",
+      "title": "Activity Cambridge 2",
+      "description": "Level A1-A2. British activity to work the pronunciation",
+      "category": "Pronunciation",
+      "day": "2026-05-25T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "83%",
+      "comment": ""
+    },
+    {
+      "id": "UhOcSM7XriQ",
+      "title": "Activity Council 8",
+      "description": "Level A2, activity and council to improve oral comprehension",
+      "category": "Comprehension",
+      "day": "2026-05-25T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "90%",
+      "comment": ""
+    },
+    {
+      "id": "KlWfuEKGbeo",
+      "title": "Christmas Nostalgia",
+      "description": "Listen podcast to improve written expression and comprehension",
+      "category": "Comprehension",
+      "day": "2026-06-01T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "",
+      "comment": "written summary"
+    },
+    {
+      "title": "Listen podcasts",
+      "description": "Listen podcasts and answer some associated quizz",
+      "category": "Comprehension",
+      "day": "2026-06-01T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "100%",
+      "comment": "",
+      "id": "RRQCz8YaqnE"
+    },
+    {
+      "title": "Activity Council 9",
+      "description": "Level A2. British activity and council to improve oral comprehension",
+      "category": "Comprehension",
+      "day": "2026-06-01T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "94%",
+      "comment": "",
+      "id": "NASZka1BOKc"
+    },
+    {
+      "id": "M9oF5oUnak4",
+      "title": "Activity Council 10",
+      "description": "Level A1-A2. British council to improve vocabulary",
+      "category": "Vocabulary",
+      "day": "2026-06-01T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "",
+      "comment": ""
+    },
+    {
+      "id": "kKlDBFJA1lY",
+      "title": "Activity Cambridge 3",
+      "description": "Level A1-A2. Activity to improve pronunciation",
+      "category": "Pronunciation",
+      "day": "2026-06-01T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "83%",
+      "comment": ""
+    },
+    {
+      "id": "yv47or3Vk_I",
+      "title": "Activity Council 11",
+      "description": "Level A2. British council to improve written comprehension",
+      "category": "Comprehension",
+      "day": "2026-06-01T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "67%",
+      "comment": ""
+    },
+    {
+      "id": "5vp4YiwYL_0",
+      "title": "Activity Council 12",
+      "description": "Level A1-A2. Activity and council to improve vocabulary",
+      "category": "Vocabulary",
+      "day": "2026-06-08T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "",
+      "comment": ""
+    },
+    {
+      "id": "tY1B_H0fMck",
+      "title": "Sri Lanka food",
+      "description": "Level B1, listen video and answer associated quizz",
+      "category": "Comprehension",
+      "day": "2026-06-08T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "60%",
+      "comment": ""
+    },
+    {
+      "id": "p00UH6GdBM8",
+      "title": "Social Media",
+      "description": "Listen a podcast and make a summary",
+      "category": "Comprehension",
+      "day": "2026-06-08T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "",
+      "comment": "written summary"
+    },
+    {
+      "id": "g-x6TfS9nP8",
+      "title": "Activity Cambridge 4",
+      "description": "Level B1-B2. Activities to improve pronunciation",
+      "category": "Pronunciation",
+      "day": "2026-06-08T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "96%",
+      "comment": ""
+    },
+    {
+      "id": "P_AIlyrEoGQ",
+      "title": "Activity Council 13",
+      "description": "A phone call conversation to improve oral comprehension",
+      "category": "Comprehension",
+      "day": "2026-06-08T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "83,5%",
+      "comment": ""
+    },
+    {
+      "title": "Activity Council 14",
+      "description": "B1. Conference programme to improve written comprehension",
+      "category": "Comprehension",
+      "day": "2026-06-08T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "83,5%",
+      "comment": "",
+      "id": "jKOuvPSYai0"
+    },
+    {
+      "id": "l7aBuN6MjKE",
+      "title": "Activity Council 15",
+      "description": "A flyer for a gym to improve written comprehension",
+      "category": "Comprehension",
+      "day": "2026-06-15T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "81,5%",
+      "comment": ""
+    },
+    {
+      "id": "cLWcKtUGUrc",
+      "title": "Diet and health",
+      "description": "B1. Listen podcast to improve  oral comprehension",
+      "category": "Comprehension",
+      "day": "2026-06-15T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "100%",
+      "comment": ""
+    },
+    {
+      "id": "qLk4uimKdp0",
+      "title": "Activity Council 16",
+      "description": "Level A1-A2. Activity to improve vocabulary",
+      "category": "Vocabulary",
+      "day": "2026-06-15T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "",
+      "comment": "Theme: Jobs 1"
     }
   ],
   "users": [
