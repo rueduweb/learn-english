@@ -10,8 +10,10 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { EnglishExercisesStore } from '../store/english-exercises.store';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { EnglishExercise } from '../../shared/models/english-item.model';
+import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
 import { Guid } from "guid-typescript";
 import { EnglishExercisesService } from '../services/english-exercises.service';
+import { NotificationComponent } from '../../shared/notification/notification.component';
 @Component({
   selector: 'app-english-exercise-form',
   imports: [
@@ -22,7 +24,8 @@ import { EnglishExercisesService } from '../services/english-exercises.service';
     MatIconModule,
     MatInputModule,
     MatDatepickerModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule
   ],
   templateUrl: './english-exercise-form.component.html',
   styleUrl: './english-exercise-form.component.css',
@@ -40,6 +43,7 @@ export class EnglishExerciseFormComponent implements OnInit{
   data = inject<EnglishExercise | null>(MAT_DIALOG_DATA);
 
   private fb = inject(FormBuilder);
+  private notifTwo = inject(MatSnackBar);
 
   constructor(private dialogRef: MatDialogRef<EnglishExerciseFormComponent>) {}
 
@@ -74,6 +78,7 @@ export class EnglishExerciseFormComponent implements OnInit{
         if (!this.store.error()) {
           this.exerciseForm.reset();
         }
+        this.openNotification('Exercise updated successfully!', 'Update');
       } else {
         const newExercise: EnglishExercise = this.exerciseForm.getRawValue();
 
@@ -87,6 +92,7 @@ export class EnglishExerciseFormComponent implements OnInit{
         if(!this.store.error()) {
           this.exerciseForm.reset();
         }
+        this.openNotification('Exercise created successfully!', 'Create');
       }
       this.closeDialog();
     }
@@ -94,5 +100,12 @@ export class EnglishExerciseFormComponent implements OnInit{
 
   closeDialog(): void {
     this.dialogRef.close();
+  }
+
+  openNotification(value: string, action: string) {
+    let datas: string[] = [value, action];
+    this.notifTwo.openFromComponent(NotificationComponent, {
+      data: datas
+    });
   }
 }
