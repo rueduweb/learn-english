@@ -441,6 +441,39 @@
       "current_status": "Done",
       "score": "",
       "comment": "Theme: Jobs 1"
+    },
+    {
+      "title": "A student discussion",
+      "description": "it talks about on similar things between Earth and March",
+      "category": "Comprehension",
+      "day": "2026-06-15T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "100%",
+      "comment": "",
+      "id": "wEWKzg9CwcY"
+    },
+    {
+      "id": "3jVolEigpDQ",
+      "title": "Activity Cambridge 5",
+      "description": "Level B1-B2, activity to improve pronunciation",
+      "category": "Pronunciation",
+      "day": "2026-06-15T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "100%",
+      "comment": ""
+    },
+    {
+      "id": "yHurj-SUoSE",
+      "title": "Robot at home",
+      "description": "Level intermediate, listen podcast and make a summary",
+      "category": "Comprehension",
+      "day": "2026-06-15T22:00:00.000Z",
+      "duration": 1,
+      "current_status": "Done",
+      "score": "",
+      "comment": "written summary"
     }
   ],
   "users": [
